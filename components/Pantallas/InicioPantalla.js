@@ -45,15 +45,13 @@ export const InicioPantalla = ({ navigation }) => {
   );
   return (
     <View style={styles.container}>
-      <Text style={styles.txt}>Buscador</Text>
+      
       <SearchBar
         round
         containerStyle={{
           backgroundColor: 'transparent',
-          borderTopWidth: 0,
-          borderBottomWidth: 0,
+          color:'#2b303b'
         }}
-        inputStyle={{ backgroundColor: 'black', color: 'red' }}
         onChangeText={texto => {
           setPelicula(texto);
           buscar(texto);
@@ -66,13 +64,7 @@ export const InicioPantalla = ({ navigation }) => {
         value={pelicula}
         placeholder="Inserte Nombre de Pelicula"
       />
-      <View style={{ margin: 10, fontSize: 20 }}>
-        {consultado ? (
-          <Text style={styles.text}>Hay {total} resultados</Text>
-        ) : (
-          <Text style={styles.texto}>Busca tu Pelicula</Text>
-        )}
-      </View>
+    
       <FlatList
         contentContainerStyle={{ alignItems: 'center' }}
         data={lista}
@@ -94,14 +86,8 @@ const styles = StyleSheet.create({
     width: 125,
     height: 250,
     margin: 5,
-    borderRadius: 5,
-    borderColor: 'red',
+    borderRadius: 10,
     borderWidth: 2,
   },
-  txt: {
-    color: 'white',
-    textAlign: 'center',
-    fontSize: 20,
-    margin: 10,
-  },
+ 
 });

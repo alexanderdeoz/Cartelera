@@ -1,4 +1,3 @@
-/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useEffect, useState} from 'react';
 import {View, Text, Image, StyleSheet} from 'react-native';
 import {ScrollView} from 'react-native-gesture-handler';
@@ -34,18 +33,12 @@ export const DetallesPantalla = ({route}) => {
           </View>
         )}
         <View style={styles.container}>
-          <Text style={styles.borde}>Fecha de exhibicion:</Text>
-          <Text style={styles.txt}>{datos.Released}</Text>
-          <Text style={styles.borde}>Actores:</Text>
-          <Text style={styles.txt}>{datos.Actors}</Text>
-          <Text style={styles.borde}>Sipnosis:</Text>
-          <Text style={styles.txt}>{datos.Plot}</Text>
-          <Text style={styles.borde}>Genero de pelicula:</Text>
-          <Text style={styles.txt}>{datos.Genre}</Text>
-          <Text style={styles.borde}>Productora:</Text>
-          <Text style={styles.txt}>{datos.Production}</Text>
-          <Text style={styles.borde}>Premios:</Text>
-          <Text style={styles.txt}>{datos.Awards}</Text>
+          <Text style={styles.bordetext}>Fecha de exhibicion:</Text>
+          <Text style={styles.txtinput}>{datos.Released}</Text>
+          <Text style={styles.bordetext}>Genero de pelicula:</Text>
+          <Text style={styles.txtinput}>{datos.Genre}</Text>
+          <Text style={styles.bordetext}>Productora:</Text>
+          <Text style={styles.txtinput}>{datos.Production}</Text>
         </View>
       </ScrollView>
     </View>
@@ -62,12 +55,9 @@ const styles = StyleSheet.create({
   },
   images: {
     width: 350,
-    height: 550,
+    height: 350,
     margin: 5,
-    alignSelf: 'center',
     borderRadius: 10,
-    borderColor: 'red',
-    borderWidth: 2,
   },
   txt: {
     display: 'flex',
@@ -84,11 +74,29 @@ const styles = StyleSheet.create({
   borde: {
     height: 50,
     fontSize: 20,
-    width: 412,
+    width: 41,
     flex: 1,
     paddingTop: 10,
     backgroundColor: 'black',
     textAlign: 'center',
-    color: 'red',
+    color: '#ffff',
   },
+  bordetext: {
+    height: 50,
+    fontSize: 20,
+    width: 400,
+    flex: 1,
+    paddingTop: 10,
+    backgroundColor: '#3b6ca7',
+    textAlign: 'center',
+    color: '#ffff',
+  },
+  txtinput: {
+    justifyContent: 'center',
+    paddingTop: 10,
+    color: 'black',
+    height: 40,
+    textAlign: 'center',
+    margin: 10,
+  }
 });
